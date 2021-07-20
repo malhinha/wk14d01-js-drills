@@ -16,3 +16,16 @@ function checkPalindrone(string) {
     return false;
   }
 }
+
+
+/* SUM ARRAY */
+
+function sumArray(array) {
+  let sum = 0;
+
+  for (i = 0; i < array.length; i++) {
+    sum += array[i];
+  }
+
+  return sum;
+}
