@@ -29,3 +29,28 @@ function sumArray(array) {
 
   return sum;
 }
+
+
+/* PRIME NUMBERS */
+
+function checkPrime(num) {
+  let calc = "";
+
+  for (i = 2; i < num; i++) {
+    if (!(num % i)) calc = "no";
+  }
+
+  if (calc === "no") {
+    return false;
+  } else {
+    return true;
+  }
+}
+
+function printPrimes(num) {
+  console.log('1');
+
+  for (i = 0; i <= num; i++) {
+    if (checkPrime(i)) console.log(i);
+  }
+}
