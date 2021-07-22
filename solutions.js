@@ -54,3 +54,51 @@ function printPrimes(num) {
     if (checkPrime(i)) console.log(i);
   }
 }
+
+
+/* ROCK PAPER SCISSORS */
+
+let choiceOptions = ['rock', 'paper', 'scissors'];
+
+function randomMove() {
+  let choice = Math.floor(Math.random() * choiceOptions.length);
+  return choiceOptions[choice];
+}
+
+let computersMove = randomMove();
+let usersMove = randomMove();
+
+// resusable strings
+let result1 = "paper beats rock";
+let result2 = "rock beats scissors";
+let result3 = "scissors beats paper";
+let computerWins = "computer wins!";
+let userWins = "user wins!";
+
+function rockPaperScissors(computer, user) {
+  console.log(computer, user);
+
+  if (computer === user) {
+    return(`no winner! both players played ${user}`)
+  } else if (computer === "rock") {
+    if (user === "paper") {
+      return (`${result1}, ${userWins}`);
+    } else if (user === "scissors") {
+      return (`${result2}, ${computerWins}`);
+    }
+  } else if (computer === "paper") {
+    if (user === "scissors") {
+      return(`${result3}, ${userWins}`);
+    } else if (user === "rock") {
+      return(`${result1}, ${computerWins}`);
+    }
+  } else if (computer === "scissors") {
+    if (user === "rock") {
+      return(`${result2}, ${userWins}`);
+    } else if (user === "paper") {
+      return (`${result3}, ${computerWins}`);
+    }
+  } else {
+    return(`those are not valid choices`);
+  }
+}
